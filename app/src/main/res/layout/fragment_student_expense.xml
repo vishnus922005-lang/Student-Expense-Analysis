@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <!-- 🔹 ONE MAIN CONTAINER -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/cobalt_blue"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ✅ Centered Title -->
+            <TextView
+                android:id="@+id/tvSmartSavingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smart Saving"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cobalt_blue"
+                android:paddingBottom="12dp" />
+
+            <!-- 🔹 Content -->
+            <TextView
+                android:id="@+id/tvStudentContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/text_main"
+                android:lineSpacingExtra="6dp" />
+
+            <!-- 🔹 Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="14dp"
+                android:background="@color/cobalt_blue"
+                android:alpha="0.2" />
+
+            <!-- 🔹 Checklist Title -->
+            <TextView
+                android:id="@+id/tvChecklistTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Before you start"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/cobalt_blue"
+                android:paddingBottom="10dp" />
+
+            <!-- ✅ Checklist -->
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbReadIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I read the intro and purpose"
+                android:textColor="@color/text_main" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbUnderstandTracking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I understand the daily savings &amp; can notify me"
+                android:textColor="@color/text_main" />
+
+            
+
+            <!-- ✅ Start Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartStudent"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="14dp"
+                app:backgroundTint="@color/cobalt_blue"
+                android:enabled="false"
+                android:alpha="0.5"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.core.widget.NestedScrollView>

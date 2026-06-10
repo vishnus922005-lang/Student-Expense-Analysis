@@ -1,0 +1,69 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp">
+
+    <!-- LEFT: Level label -->
+    <TextView
+        android:id="@+id/lv8Left"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Level 8"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- DOT -->
+    <View
+        android:id="@+id/lv8Dot"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/dot_blue_outline"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/lv8Left"
+        app:layout_constraintTop_toTopOf="@id/lv8Left" />
+
+    <!-- LINE ABOVE ONLY (LAST ITEM) -->
+    <View
+        android:id="@+id/lv8LineAbove"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/cobalt_blue"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lv8Dot"
+        app:layout_constraintStart_toStartOf="@id/lv8Dot"
+        app:layout_constraintEnd_toEndOf="@id/lv8Dot" />
+
+    <!-- RIGHT: Title + streak -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/lv8Dot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lv8Left">
+
+        <TextView
+            android:id="@+id/lv8Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Money Legend"
+            android:textStyle="bold"
+            android:textColor="@color/cobalt_blue" />
+
+        <TextView
+            android:id="@+id/lv8Streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3200 streak"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

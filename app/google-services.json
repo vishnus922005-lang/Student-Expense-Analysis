@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "10742683480",
+    "project_id": "expensereader-b27a6",
+    "storage_bucket": "expensereader-b27a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10742683480:android:d36ee14ccd7499adb6f72d",
+        "android_client_info": {
+          "package_name": "com.example.expensereader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD154bBzHngdh2q4o70hVdoIAF01AeO8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- =========================
+         TEXT STYLES
+    ========================== -->
+    <style name="Text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Title" parent="Text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Category" parent="Text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Muted" parent="Text">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#6B7280</item>
+    </style>
+
+    <!-- =========================
+         CARD STYLES (CardView)
+    ========================== -->
+    <style name="Card">
+        <item name="cardCornerRadius">14dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+    </style>
+
+    <style name="Card.Category" parent="Card">
+        <item name="cardCornerRadius">12dp</item>
+    </style>
+
+    <!-- =========================
+         SPINNER
+    ========================== -->
+    <style name="SpinnerBlackArrow" parent="Widget.AppCompat.Spinner">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:backgroundTint">@android:color/black</item>
+        <item name="android:foregroundTint">@android:color/black</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <!-- =========================
+         TOGGLE BUTTON
+    ========================== -->
+    <style name="MyToggleOutlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/cobalt_blue</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="backgroundTint">@color/toggle_unselected_bg</item>
+        <item name="android:textColor">@color/toggle_text_color</item>
+        <item name="rippleColor">@color/cobalt_blue</item>
+    </style>
+
+    <!-- =========================
+         Cash Input Theme
+    ========================== -->
+    <style name="CashInputTheme" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="colorControlActivated">@color/cobalt_blue</item>
+        <item name="colorControlNormal">@color/cobalt_blue</item>
+    </style>
+
+    <!-- =========================
+         Common TextInput Styles (Optional)
+         (You can use in layout if needed)
+    ========================== -->
+    <style name="CashTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeColor">@color/cobalt_blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/pure_black</item>
+    </style>
+
+    <style name="CashTextInputEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textColor">@color/pure_black</item>
+        <item name="android:textColorHint">@color/pure_black</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+    </style>
+
+    <!-- Drawer -->
+    <style name="DrawerItemText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ToolbarSubtitleSmall" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- ✅ FIXED: HintBlack must be BLACK -->
+    <style name="HintBlack" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/pure_black</item>
+    </style>
+
+</resources>

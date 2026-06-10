@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/tvLevelLeft"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Level 2"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/vDot"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_timeline_dot"
+        app:layout_constraintStart_toEndOf="@id/tvLevelLeft"
+        app:layout_constraintTop_toTopOf="@id/tvLevelLeft"
+        android:layout_marginStart="12dp"/>
+
+    <!-- line above -->
+    <View
+        android:id="@+id/vLineAbove"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/cobalt_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/vDot"
+        app:layout_constraintStart_toStartOf="@id/vDot"
+        app:layout_constraintEnd_toEndOf="@id/vDot"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- line below -->
+    <View
+        android:id="@+id/vLineBelow"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/cobalt_blue"
+        app:layout_constraintTop_toBottomOf="@id/vDot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vDot"
+        app:layout_constraintEnd_toEndOf="@id/vDot"
+        android:layout_marginTop="6dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/vDot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLevelLeft"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:text="Beginner Saver"
+            android:textStyle="bold"
+            android:textColor="@color/cobalt_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="50 streak"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

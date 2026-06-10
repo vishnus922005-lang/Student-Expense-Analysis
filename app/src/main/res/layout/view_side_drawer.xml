@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- Close X -->
+    <ImageView
+        android:id="@+id/btnCloseDrawer"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_close_24"
+        android:tint="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Profile image -->
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_user_circle"
+        android:tint="@color/cobalt_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCloseDrawer"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="8dp" />
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/tvDrawerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Vishnu"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/tvDrawerEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="example@gmail.com"
+        android:textColor="#6B6B6B"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDrawerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/div1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#EAEAEA"
+        app:layout_constraintTop_toBottomOf="@id/tvDrawerEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="14dp" />
+
+    <!-- Menu items -->
+    <LinearLayout
+        android:id="@+id/menuContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/div1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/menuHome"
+            style="@style/DrawerItemText"
+            android:text="Home" />
+
+        <TextView
+            android:id="@+id/menuCategory"
+            style="@style/DrawerItemText"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/menuAnalysis"
+            style="@style/DrawerItemText"
+            android:text="Analysis" />
+
+        <TextView
+            android:id="@+id/menuSavings"
+            style="@style/DrawerItemText"
+            android:text="Savings" />
+
+        <TextView
+            android:id="@+id/menuProfile"
+            style="@style/DrawerItemText"
+            android:text="Profile" />
+
+    </LinearLayout>
+
+    <!-- Logout button bottom -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/cobalt_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

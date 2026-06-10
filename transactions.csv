@@ -1,0 +1,840 @@
+keyword,category
+sweets,Food
+snacks,Food
+hotel,Food
+restaurant,Food
+zomato,Food
+swiggy,Food
+non veg,Food
+Food,Food
+mess,Food
+bakers,Food
+dhaba,Food
+tiffin,Food
+pure veg,Food
+cafe,Food
+biryani,Food
+saravana bhavan,Food
+chicken,Food
+fish,Food
+fish fry,Food
+fast food,Food
+cool drinks,Food
+dosa,Food
+pani poori,Food
+parato,Food
+hunt,Food
+coffee,Food
+juice,Food
+fried,Food
+millet,Food
+paani poori,Food
+Family restaurant,Food
+beef,Food
+rice,Food
+foods,Food
+meen,Food
+kitchen,Food
+chips,Food
+kfc,Food
+five star,Food
+eat,Food
+kaapi,Food
+tea,Food
+bakery,Food
+chai,Food
+caffeine,Food
+bar,Food
+tasmac,Food
+uber eats,Food
+domino,Food
+eatsure,Food
+pizza,Food
+pizza hut,Food
+box8,Food
+dunzo,Food
+ola foods,Food
+burger,Food
+burger king,Food
+starbucks,Food
+mcdelivery,Food
+mcdonald,Food
+uber,Travel
+ola,Travel
+bus,Travel
+train,Travel
+mtc,Travel
+tnstc,Travel
+ksrtc,Travel
+asprtc,Travel
+msrtc,Travel
+auto,Travel
+taxi,Travel
+cab,Travel
+railways,Travel
+irctc,Travel
+transport,Travel
+metropolitan transport,Travel
+metro,Travel
+rapido,Travel
+bike,Travel
+scooter,Travel
+cycle,Travel
+yulu,Travel
+toll,Travel
+fastag,Travel
+parking,Travel
+fuel,Travel
+petrol,Travel
+diesel,Travel
+cng,Travel
+hp petrol,Travel
+indian oil,Travel
+bharat petroleum,Travel
+petroleum,Travel
+shell,Travel
+makemytrip,Travel
+goibibo,Travel
+yatra,Travel
+cleartrip,Travel
+redbus,Travel
+abhibus,Travel
+trip,Travel
+easemytrip,Travel
+ivigo,Travel
+journey,Travel
+ride,Travel
+transit,Travel
+tour,Travel
+recharge,Bills & Utilities
+mobile,Bills & Utilities
+electricity,Bills & Utilities
+electric bill,Bills & Utilities
+bill,Bills & Utilities
+eb,Bills & Utilities
+tneb,Bills & Utilities
+tangedco,Bills & Utilities
+bescom,Bills & Utilities
+tsspdcl,Bills & Utilities
+apspdcl,Bills & Utilities
+mseb,Bills & Utilities
+kseb,Bills & Utilities
+power,Bills & Utilities
+power bill,Bills & Utilities
+current bill,Bills & Utilities
+energy bill,Bills & Utilities
+water,Bills & Utilities
+water bill,Bills & Utilities
+metro water,Bills & Utilities
+cmwssb,Bills & Utilities
+water tax,Bills & Utilities
+drinking water,Bills & Utilities
+tanker water,Bills & Utilities
+gas,Bills & Utilities
+lpg,Bills & Utilities
+hp gas,Bills & Utilities
+indane,Bills & Utilities
+bharat gas,Bills & Utilities
+cooking gas,Bills & Utilities
+gas cylinder,Bills & Utilities
+gas bill,Bills & Utilities
+png,Bills & Utilities
+mobile recharge,Bills & Utilities
+recharge,Bills & Utilities
+prepaid,Bills & Utilities
+postpaid,Bills & Utilities
+airtel,Bills & Utilities
+jio,Bills & Utilities
+vi,Bills & Utilities
+vodafone,Bills & Utilities
+idea,Bills & Utilities
+bsnl,Bills & Utilities
+mobile bill,Bills & Utilities
+phone bill,Bills & Utilities
+internet,Bills & Utilities
+broadband,Bills & Utilities
+wifi,Bills & Utilities
+wi-fi,Bills & Utilities
+data pack,Bills & Utilities
+fiber,Bills & Utilities
+ftth,Bills & Utilities
+airtel fiber,Bills & Utilities
+jio fiber,Bills & Utilities
+act,Bills & Utilities
+hathway,Bills & Utilities
+you broadband,Bills & Utilities
+bsnl fiber,Bills & Utilities
+dth,Bills & Utilities
+cable,Bills & Utilities
+cable tv,Bills & Utilities
+tata sky,Bills & Utilities
+dish tv,Bills & Utilities
+airtel dth,Bills & Utilities
+sun direct,Bills & Utilities
+videocon d2h,Bills & Utilities
+tv recharge,Bills & Utilities
+d2h,Bills & Utilities
+utility,Bills & Utilities
+utility bill,Bills & Utilities
+bill payment,Bills & Utilities
+service charge,Bills & Utilities
+municipal,Bills & Utilities
+corporation,Bills & Utilities
+panchayat tax,Bills & Utilities
+maintenance,Bills & Utilities
+apartment maintenance,Bills & Utilities
+society fee,Bills & Utilities
+association fee,Bills & Utilities
+billpay,Bills & Utilities
+bill pay,Bills & Utilities
+ecs,Bills & Utilities
+nach,Bills & Utilities
+grocery,Groceries
+groceries,Groceries
+provision,Groceries
+provisions,Groceries
+kirana,Groceries
+ration,Groceries
+general store,Groceries
+store,Groceries
+super market,Groceries
+supermarket,Groceries
+market,Groceries
+departmental store,Groceries
+mart,Groceries
+mini mart,Groceries
+hypermart,Groceries
+rice,Groceries
+atta,Groceries
+wheat,Groceries
+flour,Groceries
+maida,Groceries
+rava,Groceries
+sooji,Groceries
+dal,Groceries
+lentil,Groceries
+pulses,Groceries
+sugar,Groceries
+salt,Groceries
+oil,Groceries
+cooking oil,Groceries
+ghee,Groceries
+butter,Groceries
+vegetable,Groceries
+vegetables,Groceries
+veg shop,Groceries
+fruit,Groceries
+fruits,Groceries
+fruit shop,Groceries
+greens,Groceries
+shop,Groceries
+greens shop,Groceries
+market,Groceries
+mandi,Groceries
+milk,Groceries
+curd,Groceries
+yogurt,Groceries
+paneer,Groceries
+cheese,Groceries
+butter milk,Groceries
+lassi,Groceries
+cream,Groceries
+egg,Groceries
+eggs,Groceries
+bread,Groceries
+bun,Groceries
+biscuit,Groceries
+biscuits,Groceries
+rusk,Groceries
+toast,Groceries
+masala,Groceries
+spices,Groceries
+chilli powder,Groceries
+turmeric,Groceries
+coriander,Groceries
+pepper,Groceries
+garam masala,Groceries
+masala,Groceries
+soap,Groceries
+shampoo,Groceries
+toothpaste,Groceries
+detergent,Groceries
+washing powder,Groceries
+dishwash,Groceries
+cleaning liquid,Groceries
+floor cleaner,Groceries
+powder,Groceries
+bigbasket,Groceries
+bbnow,Groceries
+jiomart,Groceries
+reliance smart,Groceries
+reliance fresh,Groceries
+dmart,Groceries
+amazon fresh,Groceries
+flipkart grocery,Groceries
+blinkit,Groceries
+zepto,Groceries
+instamart,Groceries
+swiggy instamart,Groceries
+nilgiris,Groceries
+more,Groceries
+spar,Groceries
+heritage,Groceries
+reliance,Groceries
+patanjali,Groceries
+aavin,Groceries
+amul,Groceries
+store,Groceries
+shop,Groceries
+mart,Groceries
+market,Groceries
+traders,Groceries
+stores,Groceries
+mr,Friends & Family
+amazon,Shopping
+flipkart,Shopping
+shop,Shopping
+shopping,Shopping
+shoping,Shopping
+showroom,Shopping
+mall,Shopping
+retail,Shopping
+purchase,Shopping
+buy,Shopping
+bought,Shopping
+clothes,Shopping
+clothing,Shopping
+garment,Shopping
+garments,Shopping
+textile,Shopping
+textiles,Shopping
+apparel,Shopping
+dress,Shopping
+shirt,Shopping
+pant,Shopping
+jeans,Shopping
+tshirt,Shopping
+t-shirt,Shopping
+saree,Shopping
+kurti,Shopping
+lehenga,Shopping
+menswear,Shopping
+womenswear,Shopping
+kidswear,Shopping
+footwear,Shopping
+shoe,Shopping
+shoes,Shopping
+chappal,Shopping
+sandals,Shopping
+slipper,Shopping
+slippers,Shopping
+bag,Shopping
+handbag,Shopping
+backpack,Shopping
+purse,Shopping
+wallet,Shopping
+watch,Shopping
+sunglasses,Shopping
+goggles,Shopping
+jewellery,Shopping
+jewelry,Shopping
+ornament,Shopping
+gold,Shopping
+silver,Shopping
+chain,Shopping
+ring,Shopping
+electronics,Shopping
+electronic,Shopping
+mobile shop,Shopping
+mobile store,Shopping
+phone shop,Shopping
+gadget,Shopping
+charger,Shopping
+earphone,Shopping
+headphone,Shopping
+powerbank,Shopping
+laptop,Shopping
+tablet,Shopping
+cosmetics,Shopping
+makeup,Shopping
+beauty,Shopping
+skincare,Shopping
+perfume,Shopping
+deo,Shopping
+deodorant,Shopping
+cream,Shopping
+stationery,Shopping
+notebook,Shopping
+book,Shopping
+books,Shopping
+pen,Shopping
+pencil,Shopping
+school supplies,Shopping
+college supplies,Shopping
+myntra,Shopping
+ajio,Shopping
+meesho,Shopping
+snapdeal,Shopping
+nykaa,Shopping
+tata cliq,Shopping
+shopclues,Shopping
+dress shop,Shopping
+mens wear,Shopping
+menswear,Shopping
+womens wear,Shopping
+womenswear,Shopping
+kids wear,Shopping
+kidswear,Shopping
+fashion wear,Shopping
+silk,Shopping
+silks,Shopping
+textile,Shopping
+textiles,Shopping
+handloom,Shopping
+handlooms,Shopping
+saree,Shopping
+sarees,Shopping
+pattu,Shopping
+cotton,Shopping
+cottons,Shopping
+linen,Shopping
+wool,Shopping
+khadi,Shopping
+footwear,Shopping
+shoe shop,Shopping
+leather,Shopping
+leather shop,Shopping
+bag shop,Shopping
+bags,Shopping
+handbag,Shopping
+purse,Shopping
+wallet,Shopping
+luggage,Shopping
+fancy store,Shopping
+fancy shop,Shopping
+fancy,Shopping
+fancy store,Shopping
+fancy shop,Shopping
+cosmetics,Shopping
+cosmetic shop,Shopping
+gift shop,Shopping
+gifts,Shopping
+novelty,Shopping
+raymond,Shopping
+raymonds,Shopping
+louis philippe,Shopping
+van heusen,Shopping
+peter england,Shopping
+allen solly,Shopping
+park avenue,Shopping
+arrow,Shopping
+blackberrys,Shopping
+mufti,Shopping
+us polo,Shopping
+u s polo,Shopping
+levi,Shopping
+levis,Shopping
+wrangler,Shopping
+pepe,Shopping
+killer,Shopping
+flying machine,Shopping
+spykar,Shopping
+handloom,Shopping
+handlooms,Shopping
+pattu,Shopping
+kanjeevaram,Shopping
+kanchipuram,Shopping
+kanchi silks,Shopping
+pothys,Shopping
+pothys silks,Shopping
+rmkv,Shopping
+chennai silks,Shopping
+nalli,Shopping
+saravana stores,Shopping
+bata,Shopping
+reliance footwear,Shopping
+metro shoes,Shopping
+khadims,Shopping
+liberty,Shopping
+woodland,Shopping
+skechers,Shopping
+crocs,Shopping
+red tape,Shopping
+campus,Shopping
+sparx,Shopping
+skybags,Shopping
+american tourister,Shopping
+wildcraft,Shopping
+fastrack,Shopping
+titan,Shopping
+sonata,Shopping
+fossil,Shopping
+reliance digital,Shopping
+croma,Shopping
+sangeetha,Shopping
+poorvika,Shopping
+girias,Shopping
+vijay sales,Shopping
+lot mobiles,Shopping
+nykaa,Shopping
+health & glow,Shopping
+purplle,Shopping
+lifestyle,Shopping
+pantaloons,Shopping
+max fashion,Shopping
+trends,Shopping
+zudio,Shopping
+saravana,Shopping
+saravana stores,Shopping
+big bazaar,Shopping
+reliance trends,Shopping
+v mart,Shopping
+easybuy,Shopping
+cinema,Entertainment
+movie,Entertainment
+movies,Entertainment
+theatre,Entertainment
+theater,Entertainment
+multiplex,Entertainment
+cineplex,Entertainment
+screen,Entertainment
+talkies,Entertainment
+film,Entertainment
+films,Entertainment
+gaming,Entertainment
+game zone,Entertainment
+games,Entertainment
+play zone,Entertainment
+fun zone,Entertainment
+amusement,Entertainment
+arcade,Entertainment
+bowling,Entertainment
+snooker,Entertainment
+billiards,Entertainment
+pool,Entertainment
+park,Entertainment
+amusement park,Entertainment
+theme park,Entertainment
+water park,Entertainment
+wonderla,Entertainment
+rides,Entertainment
+concert,Entertainment
+show,Entertainment
+live show,Entertainment
+event,Entertainment
+events,Entertainment
+program,Entertainment
+programme,Entertainment
+music,Entertainment
+dj,Entertainment
+stage show,Entertainment
+subscription,Entertainment
+streaming,Entertainment
+ott,Entertainment
+online entertainment,Entertainment
+music app,Entertainment
+video app,Entertainment
+ticket,Entertainment
+tickets,Entertainment
+entry,Entertainment
+entry fee,Entertainment
+pass,Entertainment
+club,Entertainment
+clubs,Entertainment
+recreation,Entertainment
+recreational,Entertainment
+lounge,Entertainment
+pub,Entertainment
+pvr,Entertainment
+pvr inox,Entertainment
+inox,Entertainment
+cinepolis,Entertainment
+carnival cinemas,Entertainment
+carnival,Entertainment
+spi cinemas,Entertainment
+sathyam cinemas,Entertainment
+escape cinemas,Entertainment
+luxe cinemas,Entertainment
+jazz cinemas,Entertainment
+ags cinemas,Entertainment
+vetri cinemas,Entertainment
+rohini silver screens,Entertainment
+kg cinemas,Entertainment
+arul murugan cinemas,Entertainment
+timezone,Entertainment
+fun city,Entertainment
+funcity,Entertainment
+play arena,Entertainment
+game palace,Entertainment
+smash,Entertainment
+hamleys play,Entertainment
+snow world,Entertainment
+wonderla,Entertainment
+queensland,Entertainment
+imagica,Entertainment
+adlabs,Entertainment
+snow kingdom,Entertainment
+vgp,Entertainment
+vgp marine kingdom,Entertainment
+bookmyshow,Entertainment
+paytm movies,Entertainment
+insider,Entertainment
+zomato live,Entertainment
+netflix,Entertainment
+amazon prime,Entertainment
+prime video,Entertainment
+disney hotstar,Entertainment
+hotstar,Entertainment
+sony liv,Entertainment
+zee5,Entertainment
+aha,Entertainment
+voot,Entertainment
+gaana,Entertainment
+spotify,Entertainment
+apple music,Entertainment
+wynk,Entertainment
+bookmyshow,Entertainment
+paytm insider,Entertainment
+ticketnew,Entertainment
+rent,Rent/Hostel
+house rent,Rent/Hostel
+room rent,Rent/Hostel
+pg rent,Rent/Hostel
+pg,Rent/Hostel
+paying guest,Rent/Hostel
+hostel,Rent/Hostel
+hostel fee,Rent/Hostel
+boarding,Rent/Hostel
+lodging,Rent/Hostel
+lodge,Rent/Hostel
+hotel,Rent/Hostel
+hotels,Rent/Hostel
+stay,Rent/Hostel
+room,Rent/Hostel
+rooms,Rent/Hostel
+inn,Rent/Hostel
+residency,Rent/Hostel
+suites,Rent/Hostel
+guest house,Rent/Hostel
+guesthouse,Rent/Hostel
+service apartment,Rent/Hostel
+apartment,Rent/Hostel
+apartments,Rent/Hostel
+flat,Rent/Hostel
+flats,Rent/Hostel
+building,Rent/Hostel
+residency,Rent/Hostel
+complex,Rent/Hostel
+maintenance,Rent/Hostel
+house maintenance,Rent/Hostel
+society fee,Rent/Hostel
+association fee,Rent/Hostel
+building maintenance,Rent/Hostel
+oyo,Rent/Hostel
+oyo rooms,Rent/Hostel
+treebo,Rent/Hostel
+fabhotel,Rent/Hostel
+goibibo hotel,Rent/Hostel
+makemytrip hotel,Rent/Hostel
+airbnb,Rent/Hostel
+booking.com,Rent/Hostel
+agoda,Rent/Hostel
+portion,Rent/Hostel
+school,Education
+schools,Education
+college,Education
+colleges,Education
+university,Education
+institute,Education
+institution,Education
+academy,Education
+campus,Education
+fees,Education
+fee,Education
+tuition,Education
+admission fee,Education
+exam fee,Education
+semester fee,Education
+term fee,Education
+course fee,Education
+lab fee,Education
+coaching,Education
+coaching centre,Education
+coaching center,Education
+tuition centre,Education
+tuition center,Education
+training,Education
+training centre,Education
+training center,Education
+classes,Education
+learning centre,Education
+learning center,Education
+computer centre,Education
+computer center,Education
+software training,Education
+coding class,Education
+programming class,Education
+it training,Education
+skill training,Education
+spoken english,Education
+book stall,Education
+book shop,Education
+books,Education
+study material,Education
+notes,Education
+guide book,Education
+reference book,Education
+exam,Education
+examination,Education
+test,Education
+assessment,Education
+certification,Education
+certificate,Education
+byjus,Education
+unacademy,Education
+vedantu,Education
+coursera,Education
+udemy,Education
+edx,Education
+khan academy,Education
+simplilearn,Education
+upgrad,Education
+library,Education
+lab,Education
+laboratory,Education
+research,Education
+project fee,Education
+xerox,Education
+iit,Education
+medical,health Medicine & personal Care
+medicals,health Medicine & personal Care
+medical store,health Medicine & personal Care
+medical shop,health Medicine & personal Care
+pharmacy,health Medicine & personal Care
+pharma,health Medicine & personal Care
+chemist,health Medicine & personal Care
+drug store,health Medicine & personal Care
+drug shop,health Medicine & personal Care
+hospital,health Medicine & personal Care
+hospitals,health Medicine & personal Care
+clinic,health Medicine & personal Care
+clinics,health Medicine & personal Care
+polyclinic,health Medicine & personal Care
+health centre,health Medicine & personal Care
+health center,health Medicine & personal Care
+nursing home,health Medicine & personal Care
+doctor,health Medicine & personal Care
+physician,health Medicine & personal Care
+consultation,health Medicine & personal Care
+opd,health Medicine & personal Care
+visit fee,health Medicine & personal Care
+lab,health Medicine & personal Care
+labs,health Medicine & personal Care
+laboratory,health Medicine & personal Care
+diagnostics,health Medicine & personal Care
+diagnostic centre,health Medicine & personal Care
+scan,health Medicine & personal Care
+scanning,health Medicine & personal Care
+xray,health Medicine & personal Care
+x-ray,health Medicine & personal Care
+mri,health Medicine & personal Care
+ct scan,health Medicine & personal Care
+blood test,health Medicine & personal Care
+test centre,health Medicine & personal Care
+dental,health Medicine & personal Care
+dentist,health Medicine & personal Care
+tooth,health Medicine & personal Care
+teeth,health Medicine & personal Care
+eye hospital,health Medicine & personal Care
+eye clinic,health Medicine & personal Care
+optical,health Medicine & personal Care
+opticals,health Medicine & personal Care
+wellness,health Medicine & personal Care
+therapy,health Medicine & personal Care
+physiotherapy,health Medicine & personal Care
+yoga,health Medicine & personal Care
+ayurveda,health Medicine & personal Care
+siddha,health Medicine & personal Care
+homeopathy,health Medicine & personal Care
+naturopathy,health Medicine & personal Care
+personal care,health Medicine & personal Care
+health care,health Medicine & personal Care
+hygiene,health Medicine & personal Care
+sanitizer,health Medicine & personal Care
+mask,health Medicine & personal Care
+face mask,health Medicine & personal Care
+gloves,health Medicine & personal Care
+counselling,health Medicine & personal Care
+counseling,health Medicine & personal Care
+therapy centre,health Medicine & personal Care
+psychiatrist,health Medicine & personal Care
+psychologist,health Medicine & personal Care
+practo,health Medicine & personal Care
+1mg,health Medicine & personal Care
+tata 1mg,health Medicine & personal Care
+apollo pharmacy,health Medicine & personal Care
+apollo hospitals,health Medicine & personal Care
+netmeds,health Medicine & personal Care
+pharmeasy,health Medicine & personal Care
+medplus,health Medicine & personal Care
+salon,health Medicine & personal Care
+saloon,health Medicine & personal Care
+beauty parlour,health Medicine & personal Care
+parlour,health Medicine & personal Care
+beauty salon,health Medicine & personal Care
+unisex salon,health Medicine & personal Care
+hair salon,health Medicine & personal Care
+haircut,health Medicine & personal Care
+hair cut,health Medicine & personal Care
+hair spa,health Medicine & personal Care
+hair styling,health Medicine & personal Care
+hair style,health Medicine & personal Care
+shave,health Medicine & personal Care
+shaving,health Medicine & personal Care
+beard trim,health Medicine & personal Care
+beard,health Medicine & personal Care
+spa,health Medicine & personal Care
+massage,health Medicine & personal Care
+body massage,health Medicine & personal Care
+wellness centre,health Medicine & personal Care
+wellness center,health Medicine & personal Care
+facial,health Medicine & personal Care
+cleanup,health Medicine & personal Care
+manicure,health Medicine & personal Care
+pedicure,health Medicine & personal Care
+waxing,health Medicine & personal Care
+threading,health Medicine & personal Care
+makeup,health Medicine & personal Care
+grooming,health Medicine & personal Care
+personal care,health Medicine & personal Care
+skin care,health Medicine & personal Care
+beauty care,health Medicine & personal Care
+studio,health Medicine & personal Care
+centre,health Medicine & personal Care
+center,health Medicine & personal Care
+care,health Medicine & personal Care
+services,health Medicine & personal Care
+gym,health Medicine & personal Care
+gymnasium,health Medicine & personal Care
+fitness,health Medicine & personal Care
+health club,health Medicine & personal Care
+workout centre,health Medicine & personal Care
+workout center,health Medicine & personal Care
+yoga,health Medicine & personal Care
+training centre,health Medicine & personal Care
+training center,health Medicine & personal Care
+physical training,health Medicine & personal Care
+body training,health Medicine & personal Care
+weight training,health Medicine & personal Care
+crossfit,health Medicine & personal Care
+strength training,health Medicine & personal Care
+cardio,health Medicine & personal Care
+treadmill,health Medicine & personal Care
+aerobics,health Medicine & personal Care
+zumba,health Medicine & personal Care
+dance fitness,health Medicine & personal Care
+sports club,health Medicine & personal Care
+sports academy,health Medicine & personal Care
+swimming,health Medicine & personal Care
+swimming pool,health Medicine & personal Care
+pool membership,health Medicine & personal Care

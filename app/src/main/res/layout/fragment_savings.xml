@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- EXISTING SAVING CARD -->
+        <include
+            android:id="@+id/includeSavingCardSavings"
+            layout="@layout/view_saving_card_savings" />
+
+        <!-- ✅ SAVING SCHEMES CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSavingSchemes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- ✅ BLUE HEADER -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="10dp"
+                    android:background="@drawable/bg_scheme_header_blue">
+
+                    <TextView
+                        android:id="@+id/tvSchemesTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Saving Schemes"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSchemeFilter"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:text=""
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:cornerRadius="12dp"
+                        app:backgroundTint="@color/cobalt_blue"
+                        app:icon="@drawable/ic_filter"
+                        app:iconTint="@android:color/white"
+                        app:iconSize="20dp"
+                        app:iconGravity="textStart"
+                        app:strokeWidth="0dp" />
+                </LinearLayout>
+
+                <!-- ✅ WHITE CONTENT -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="@android:color/white">
+
+                    <TextView
+                        android:id="@+id/tvSchemesSub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Student eligible • Non-caste • Govt/official"
+                        android:textSize="12sp"
+                        android:alpha="0.75"
+                        android:textColor="@android:color/black" />
+
+                    <ProgressBar
+                        android:id="@+id/pbSchemes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvSchemesEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No schemes found"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSavingSchemes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

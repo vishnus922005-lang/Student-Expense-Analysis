@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#E6E6E6"
+    android:backgroundTint="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Week title -->
+        <TextView
+            android:id="@+id/tvWeekTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week 1"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp" />
+
+        <!-- ✅ TOP LABELS (Weekdays LEFT, Weekend RIGHT) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekdays"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@android:color/black"
+                android:gravity="start"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekend"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@android:color/black"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- ✅ AMOUNT + TXN (Weekdays LEFT, Weekend RIGHT) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <TextView
+                android:id="@+id/tvWeekdayInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="₹0 • 0 txns"
+                android:textSize="13sp"
+                android:textColor="#444444"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/tvWeekendInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="₹0 • 0 txns"
+                android:textSize="13sp"
+                android:textColor="#444444"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- ✅ CURVED BAR TRACK -->
+        <LinearLayout
+            android:id="@+id/llSplitBar"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_split_track_rounded"
+            android:clipToOutline="true"
+            android:outlineProvider="background">
+
+            <!-- ✅ Weekdays LEFT (blue) -->
+            <View
+                android:id="@+id/vWeekdayBar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_split_weekday_left" />
+
+            <!-- ✅ Weekend RIGHT (teal) -->
+            <View
+                android:id="@+id/vWeekendBar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_split_weekend_right" />
+        </LinearLayout>
+
+        <!-- ✅ % ROW BOTTOM (Weekdays LEFT, Weekend RIGHT) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvWeekdayPct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0%"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#1E88E5"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/tvWeekendPct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0%"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#00ACC1"
+                android:gravity="end"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

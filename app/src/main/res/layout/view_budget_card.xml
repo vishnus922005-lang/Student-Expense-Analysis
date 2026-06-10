@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardBudget"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Title Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvBudgetTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daily Budget"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/cobalt_blue"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBudgetBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="SAFE"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- ✅ My Budget + Per Day (NEW) -->
+        <TextView
+            android:id="@+id/tvMyBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="My Budget: ₹0"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_main" />
+
+        <TextView
+            android:id="@+id/tvPerDayBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Per day limit: ₹0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_main" />
+
+        <TextView
+            android:id="@+id/tvDailySuggestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Set a daily limit to control spending."
+            android:textSize="12sp"
+            android:textColor="@color/text_muted" />
+
+        <!-- Numbers (Daily Today) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tvBudgetLeft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Left: ₹0"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"/>
+
+            <TextView
+                android:id="@+id/tvBudgetSpent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spent: ₹0"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"/>
+        </LinearLayout>
+
+        <!-- ✅ Suggestion AFTER Left/Spent (NEW) -->
+        
+
+        <!-- ✅ Daily Progress -->
+        <ProgressBar
+            android:id="@+id/budgetProgressDaily"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="0"
+            android:indeterminate="false" />
+
+        <!-- ✅ Overall Weekly/Monthly Section (NEW) -->
+        <LinearLayout
+            android:id="@+id/overallContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvOverallTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weekly Budget"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/cobalt_blue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvOverallLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Left: ₹0"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_main"/>
+
+                <TextView
+                    android:id="@+id/tvOverallSpent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spent: ₹0"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_main"/>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/budgetProgressOverall"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="0"
+                android:indeterminate="false" />
+
+        </LinearLayout>
+
+        <!-- Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSetDailyLimit"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Set Limit"
+                android:textAllCaps="false"
+                app:strokeColor="@color/cobalt_blue"
+                android:textColor="@color/cobalt_blue"/>
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDisableLimit"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Disable"
+                android:textAllCaps="false"
+                app:strokeColor="@color/cobalt_blue"
+                android:textColor="@color/cobalt_blue"/>
+        </LinearLayout>
+
+        <!-- Chart header row -->
+        <LinearLayout
+            android:id="@+id/chartHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daily Budget Threshold Analysis"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/ivChartToggle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_down"
+                android:tint="@color/cobalt_blue"/>
+        </LinearLayout>
+
+        <!-- Chart container (collapsed by default) -->
+        <!-- Chart container (collapsed by default) -->
+        <LinearLayout
+            android:id="@+id/chartContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_marginBottom="14dp">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/budgetLineChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <!-- ✅ BULK SKIP (NOW INSIDE ARROW) -->
+            
+
+        </LinearLayout>
+
+        
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

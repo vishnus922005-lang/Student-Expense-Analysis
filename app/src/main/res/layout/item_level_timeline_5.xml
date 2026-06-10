@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp">
+
+    <!-- Left: Level label -->
+    <TextView
+        android:id="@+id/tvLevelLeft"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Level 5"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Middle: Circle -->
+    <View
+        android:id="@+id/vDot"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/bg_timeline_dot"
+        app:layout_constraintStart_toEndOf="@id/tvLevelLeft"
+        app:layout_constraintTop_toTopOf="@id/tvLevelLeft"
+        android:layout_marginStart="12dp"/>
+
+    <!-- Middle: Line (only below for first item) -->
+    <View
+        android:id="@+id/vLineBelow"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/cobalt_blue"
+        app:layout_constraintTop_toBottomOf="@id/vDot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vDot"
+        app:layout_constraintEnd_toEndOf="@id/vDot"
+        android:layout_marginTop="6dp"/>
+
+    <!-- Right: Title + streak -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/vDot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLevelLeft"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saving Champ"
+            android:textStyle="bold"
+            android:textColor="@color/cobalt_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="400 streak"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

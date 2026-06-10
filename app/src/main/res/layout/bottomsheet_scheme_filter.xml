@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter Schemes"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/cobalt_blue"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ====================== -->
+    <!-- State / UT -->
+    <!-- ====================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State / UT"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/cobalt_blue"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BlueDropdownBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:endIconMode="dropdown_menu"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/actState"
+            style="@style/BlueDropdownText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== -->
+    <!-- Scheme Type -->
+    <!-- ====================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scheme Type"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/cobalt_blue"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BlueDropdownBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:endIconMode="dropdown_menu"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/actType"
+            style="@style/BlueDropdownText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ====================== -->
+    <!-- Scheme Name -->
+    <!-- ====================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scheme Name"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="@color/cobalt_blue"
+        android:layout_marginBottom="6dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BlueDropdownBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:endIconMode="dropdown_menu"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/actSchemeName"
+            style="@style/BlueDropdownText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Reset"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            app:cornerRadius="20dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/cobalt_blue"
+            app:backgroundTint="@android:color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApply"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:text="Apply"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:cornerRadius="20dp"
+            app:backgroundTint="@color/cobalt_blue" />
+    </LinearLayout>
+
+</LinearLayout>

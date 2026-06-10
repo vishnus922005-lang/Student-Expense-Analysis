@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.EAS" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary -->
+        <item name="colorPrimary">@color/cobalt_blue</item>
+        <item name="colorPrimaryVariant">@color/cobalt_blue</item>
+        <item name="colorSecondary">@color/cobalt_blue</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/cobalt_blue</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+
+        <!-- App background -->
+        <item name="android:windowBackground">@color/screen_bg</item>
+
+        <!-- ✅ Global TextInput -->
+        <item name="textInputStyle">@style/EAS.TextInputLayout</item>
+        <item name="editTextStyle">@style/EAS.EditText</item>
+    </style>
+
+    <!-- ✅ Global TextInputLayout style -->
+    <style name="EAS.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/cobalt_blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/pure_black</item>
+    </style>
+
+    <!-- ✅ Global EditText style -->
+    <style name="EAS.EditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/pure_black</item>
+        <item name="android:textColorHint">@color/pure_black</item>
+    </style>
+
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===== Theme Blue (Cobalt) ===== -->
+    <color name="cobalt_blue">#2F80ED</color>
+    <color name="primary">@color/cobalt_blue</color>
+    <color name="primary_dark">#1F5FCC</color>
+
+
+    <!-- ===== Text ===== -->
+    <color name="text_main">#111111</color>
+    <color name="text_black">#111111</color>
+    <color name="text_muted">#6B7280</color>
+    
+    <!-- ===== Backgrounds / Cards ===== -->
+    <color name="screen_bg">#F5F6FA</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="divider">#E5E7EB</color>
+
+    <!-- ===== Common ===== -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="bright_gray">#F2F4F7</color>
+
+    <color name="dropdown_gray">#E9EEF5</color>
+
+    
+    <color name="progress_track">#E5E7EB</color>
+    <color name="toggle_unselected_bg">#FFFFFF</color>
+    <color name="light_gray">#F2F2F2</color>
+
+    <color name="cash_input_bg">#FFFFFF</color>      <!-- light gray box -->
+    <color name="cash_hint">#6B7280</color>          <!-- hint gray -->
+    <color name="cash_text">#111111</color>          <!-- black text -->
+    <color name="txn_green">#1B8F3A</color>
+    <color name="cat_food">#1E88E5</color>
+    <color name="cat_shopping">#8E24AA</color>
+    <color name="cat_travel">#FB8C00</color>
+    <color name="cat_groceries">#43A047</color>
+    <color name="cat_bills">#E53935</color>
+    <color name="cat_entertainment">#00ACC1</color>
+    <color name="cat_rent">#6D4C41</color>
+    <color name="cat_education">#3949AB</color>
+    <color name="cat_health">#F4511E</color>
+    <color name="cat_savings">#00897B</color>
+    <color name="cat_family">#FDD835</color>
+    <color name="cat_others">#546E7A</color>
+    <color name="safe_blue">#2563EB</color>
+    <color name="over_red">#DC2626</color>
+    <color name="other_categories_color">#f10778</color>
+      <!-- dark text -->
+    <color name="text_secondary">#6B7280</color> 
+
+    <color name="primary_blue">#2F5FD0</color>
+
+    <!-- 🔵 Dark Blue (optional for header gradient if needed) -->
+    <color name="primary_blue_dark">#1E3FA8</color>
+
+    <!-- ⚪ Light Gray Background -->
+    <color name="light_gray_bg">#F2F2F2</color>
+
+    <!-- ⚫ Pure Black Text -->
+    <color name="pure_black">#000000</color>
+
+    <!-- ⚪ White -->
+   
+
+
+
+
+  
+
+
+
+</resources>

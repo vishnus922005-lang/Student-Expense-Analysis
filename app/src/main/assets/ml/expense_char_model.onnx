@@ -1,0 +1,19 @@
+import joblib
+from skl2onnx import convert_sklearn
+from skl2onnx.common.data_types import StringTensorType
+
+model = joblib.load("expense_char_model.pkl")
+
+# Input is a list of strings
+initial_type = [("input", StringTensorType([None, 1]))]
+
+onnx_model = convert_sklearn(
+    model,
+    initial_types=initial_type,
+    options={id(model): {"zipmap": False}}  # to get plain probability array
+)
+
+with open("expense_char_model.onnx", "wb") as f:
+    f.write(onnx_model.SerializeToString())
+
+print("Saved expense_char_model.onnx ✅")

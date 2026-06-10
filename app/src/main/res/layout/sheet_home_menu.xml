@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/menuHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingVertical="14dp" />
+
+    <TextView
+        android:id="@+id/menuCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingVertical="14dp" />
+
+    <TextView
+        android:id="@+id/menuAnalysis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Analysis"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingVertical="14dp" />
+
+    <TextView
+        android:id="@+id/menuSavings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Savings"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingVertical="14dp" />
+
+    <TextView
+        android:id="@+id/menuProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:paddingVertical="14dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/cobalt_blue" />
+
+</LinearLayout>

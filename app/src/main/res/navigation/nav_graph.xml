@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.expensereader.ui.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.expensereader.ui.category.CategoryFragment"
+        android:label="Category">
+
+        <action
+            android:id="@+id/action_categoryFragment_to_merchantListFragment"
+            app:destination="@id/merchantListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/merchantListFragment"
+        android:name="com.example.expensereader.ui.category.MerchantListFragment"
+        android:label="Merchants">
+
+        <argument
+            android:name="category"
+            app:argType="string" />
+
+        <argument
+            android:name="startMillis"
+            app:argType="long" />
+
+        <argument
+            android:name="endMillis"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_merchantListFragment_to_merchantDetailFragment"
+            app:destination="@id/merchantDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/merchantDetailFragment"
+        android:name="com.example.expensereader.ui.category.MerchantDetailFragment"
+        android:label="Merchant Details">
+
+        <argument
+            android:name="category"
+            app:argType="string" />
+
+        <argument
+            android:name="merchant"
+            app:argType="string" />
+
+        <argument
+            android:name="startMillis"
+            app:argType="long" />
+
+        <argument
+            android:name="endMillis"
+            app:argType="long" />
+    </fragment>
+
+    <!-- ✅ KEEP ONLY ONE analysisFragment -->
+    <fragment
+        android:id="@+id/analysisFragment"
+        android:name="com.example.expensereader.ui.analysis.AnalysisFragment"
+        android:label="Analysis">
+
+        <action
+            android:id="@+id/action_analysisFragment_to_frequencyFragment"
+            app:destination="@id/frequencyFragment" />
+
+        <action
+            android:id="@+id/action_analysisFragment_to_weeklyFragment"
+            app:destination="@id/weeklyFragment" />
+
+        <action
+            android:id="@+id/action_analysisFragment_to_monthlyFragment"
+            app:destination="@id/monthlyFragment" />
+
+        <action
+            android:id="@+id/action_analysisFragment_to_semesterFragment"
+            app:destination="@id/semesterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/savingsFragment"
+        android:name="com.example.expensereader.ui.savings.SavingsFragment"
+        android:label="Savings" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.expensereader.ui.profile.ProfileFragment"
+        android:label="Profile">
+
+        <!-- ✅ NEW ACTION: Profile -> Previous Month Analysis -->
+        <action
+            android:id="@+id/action_profileFragment_to_previousMonthAnalysisFragment"
+            app:destination="@id/previousMonthAnalysisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/frequencyFragment"
+        android:name="com.example.expensereader.ui.analysis.FrequencyFragment"
+        android:label="Frequency Analysis" />
+
+    <fragment
+        android:id="@+id/weeklyFragment"
+        android:name="com.example.expensereader.ui.analysis.WeeklyFragment"
+        android:label="Weekly Analysis" />
+
+    <fragment
+        android:id="@+id/monthlyFragment"
+        android:name="com.example.expensereader.ui.analysis.MonthlyFragment"
+        android:label="Monthly Analysis" />
+
+    <fragment
+        android:id="@+id/semesterFragment"
+        android:name="com.example.expensereader.ui.analysis.SemesterFragment"
+        android:label="Semester Analysis" />
+
+    <fragment
+        android:id="@+id/studentExpenseFragment"
+        android:name="com.example.expensereader.ui.student.StudentExpenseFragment"
+        android:label="Student Expense" />
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.expensereader.ui.auth.AuthFragment"
+        android:label="Auth">
+        <action
+            android:id="@+id/action_authFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/authFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.expensereader.ui.auth.RegisterFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.expensereader.ui.auth.LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/previousMonthAnalysisFragment"
+        android:name="com.example.expensereader.ui.analysis.PreviousMonthAnalysisFragment"
+        android:label="Previous Month Analysis"
+        tools:layout="@layout/fragment_monthly" />
+
+</navigation>

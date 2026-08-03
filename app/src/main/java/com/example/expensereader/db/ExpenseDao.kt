@@ -1,4 +1,3 @@
-// File: app/src/main/java/com/example/expensereader/db/ExpenseDao.kt
 package com.example.expensereader.db
 
 import androidx.room.Dao
@@ -11,13 +10,6 @@ import androidx.room.Delete
 import com.example.expensereader.model.DayTotal
 import com.example.expensereader.model.ChartDayTotal
 import com.example.expensereader.db.BudgetDayTotal
-
-
-
-
-
-
-
 
 data class MerchantSummaryRow(
     val merchant: String,
@@ -37,7 +29,7 @@ data class UnknownSmsDebugRow(
     val merchantAcc: String?
 )
 
-// inside ExpenseDao.kt (top area)
+
 data class UnknownAccGroup(
     val merchantAcc: String,
     val txnCount: Int,
@@ -51,7 +43,7 @@ data class MerchantTotalRow(
 )
 
 data class WeekendWeekdayRow(
-    val isWeekend: Int,      // 1 = weekend, 0 = weekday
+    val isWeekend: Int,      
     val totalAmount: Double,
     val txnCount: Int
 )
@@ -62,7 +54,7 @@ data class TxnLite(
 )
 
 data class MonthSummaryRow(
-    val monthNo: Int,      // 1..12
+    val monthNo: Int,      
     val totalAmount: Double,
     val txnCount: Int
 )
@@ -77,31 +69,16 @@ data class TodayUnknownSummary(
     val cnt: Int
 )
 
-
-
 data class LatestExpenseRow(
     val id: Long,
     val amount: Double
 )
-
-
-
-
-
-
-
-
-
 
 @Dao
 interface ExpenseDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(expense: Expense): Long
-
-    // ==========================================================
-    // ✅ REF → MerchantAcc helpers
-    // ==========================================================
 
     @Query("""
         SELECT merchantAcc FROM expenses
@@ -132,10 +109,6 @@ interface ExpenseDao {
         newCategory: String
     ): Int
 
-    // ==========================================================
-    // ✅ HOME / COUNTS
-    // ==========================================================
-
     @Query("""
         SELECT * FROM expenses
         WHERE source = 'SMS'
@@ -159,10 +132,6 @@ interface ExpenseDao {
     """)
     fun getPendingImportCountFlow(): Flow<Int>
 
-    // ==========================================================
-    // ✅ EDIT
-    // ==========================================================
-
     @Query("""
         UPDATE expenses
         SET name = :newName,
@@ -173,10 +142,6 @@ interface ExpenseDao {
     """)
     suspend fun updateNameCategory(id: Long, newName: String, newCategory: String): Int
 
-    // ==========================================================
-    // ✅ DUP CHECK
-    // ==========================================================
-
     @Query("""
         SELECT COUNT(*) FROM expenses
         WHERE source = 'SMS'
@@ -185,10 +150,6 @@ interface ExpenseDao {
           AND amount = :amount
     """)
     suspend fun existsSms(refNo: String, date: Long, amount: Double): Int
-
-    // ==========================================================
-    // ✅ PDF APPLY SUPPORT
-    // ==========================================================
 
     @Query("""
         UPDATE expenses
@@ -223,10 +184,6 @@ interface ExpenseDao {
     """)
     suspend fun fillUnknownNamesForPendingSms(): Int
 
-    // ==========================================================
-    // ✅ BACKFILL (ONLY NAME - NO pm.category)
-    // ==========================================================
-
     @Query("""
         UPDATE expenses
         SET name = (
@@ -252,11 +209,6 @@ interface ExpenseDao {
     """)
     suspend fun backfillUnknownNamesFromPdfMappingByUpiRef(): Int
 
-    
-    // ==========================================================
-    // ✅ DEBUG
-    // ==========================================================
-
     @Query("""
         SELECT id, name, upiRef, merchantAcc
         FROM expenses
@@ -266,10 +218,6 @@ interface ExpenseDao {
         LIMIT 200
     """)
     suspend fun debugUnknownSms(): List<UnknownSmsDebugRow>
-
-    // ==========================================================
-    // ✅ MERCHANT LIST / DETAILS
-    // ==========================================================
 
     @Query("""
         SELECT 
@@ -310,12 +258,6 @@ interface ExpenseDao {
         endMillis: Long
     ): Flow<List<MerchantTxnRow>>
 
-
-
-    // ==========================================================
-    // ✅ CATEGORY TOTALS
-    // ==========================================================
-
     @Query("""
         SELECT COALESCE(NULLIF(TRIM(category), ''), 'Others') AS name,
             SUM(amount) AS total,
@@ -347,7 +289,6 @@ interface ExpenseDao {
     @Query("SELECT MIN(date) FROM expenses")
     suspend fun getFirstExpenseDate(): Long?
 
-    // ✅ Home tabs
     @Query("""
         SELECT * FROM expenses
         WHERE source = 'SMS'
@@ -360,9 +301,6 @@ interface ExpenseDao {
     """)
     fun getRecentSmsFlow(): Flow<List<Expense>>
 
-    
-
-    // ✅ Used in SmsReader fallback learning
     @Query("""
         SELECT name FROM expenses
         WHERE source='SMS'
@@ -375,20 +313,6 @@ interface ExpenseDao {
     """)
     suspend fun findKnownNameByMerchantAcc(merchantAcc: String): String?
 
-    
-
-    
-
-    // --- BACKFILL RULES ---
-
-    // Update Unknown where upiRef matches mapping
-    
-
-    // Update Unknown where accNo matches mapping (if still Unknown)
-    
-
-    
-    // ✅ Today Known SMS (name is real)
     @Query("""
         SELECT * FROM expenses
         WHERE source = 'SMS'
@@ -401,8 +325,7 @@ interface ExpenseDao {
         ORDER BY date DESC
     """)
     fun observeTodayKnownSms(): Flow<List<Expense>>
-
-    // ✅ Unknown SMS (name missing/unknown)
+    
     @Query("""
         SELECT * FROM expenses
         WHERE source = 'SMS'
@@ -416,10 +339,6 @@ interface ExpenseDao {
     """)
     fun observeUnknownSms(): Flow<List<Expense>>
 
-    // ✅ After PDF resolves some names by upiRef,
-// propagate that resolved name to other unknown SMS with same merchantAcc
-    // ✅ After PDF resolves names, propagate to other Unknown SMS with same merchantAcc
-    @Query("""
         UPDATE expenses
         SET 
             name = (
@@ -501,7 +420,6 @@ interface ExpenseDao {
     """)
     suspend fun backfillUnknownNamesFromPdfMappingByAccNo(): Int
 
-
     @Query("""
         UPDATE expenses
         SET accNo = :myAcc4,
@@ -519,8 +437,6 @@ interface ExpenseDao {
         merchant4: String?
     ): Int
 
-    // ✅ SAFE propagate:
-// only propagate when merchantAcc has exactly ONE distinct real name in DB
     @Query("""
         WITH uniq AS (
             SELECT 
@@ -558,8 +474,8 @@ interface ExpenseDao {
         val name: String,
         val amount: Double,
         val date: Long,
-        val accNo: String?,        // ✅ self
-        val merchantAcc: String?,  // ✅ other
+        val accNo: String?,       
+        val merchantAcc: String?,  
         val refNo: String,
         val upiRef: String?
     )
@@ -603,12 +519,6 @@ interface ExpenseDao {
         newCategory: String
     ): Int
 
-    // File: app/src/main/java/com/example/expensereader/db/ExpenseDao.kt
-
-   
-    
-
-    
     @Query("""
         UPDATE expenses
         SET name = :newName,
@@ -639,9 +549,7 @@ interface ExpenseDao {
         AND LOWER(name) != 'unknown'
         ORDER BY name
     """)
-    suspend fun getAllKnownNamesForSuggest(): List<String>
-
-    
+    suspend fun getAllKnownNamesForSuggest(): List<String>    
 
     @Query("""
         UPDATE expenses
@@ -665,9 +573,6 @@ interface ExpenseDao {
         newCategory: String
     ): Int
 
-    
-
-    
     @Query("""
         UPDATE expenses
         SET name = :newName,
@@ -681,7 +586,6 @@ interface ExpenseDao {
         newName: String,
         newCategory: String
     ): Int
-
     
     @Query("""
         SELECT DISTINCT category
@@ -691,12 +595,6 @@ interface ExpenseDao {
         ORDER BY category COLLATE NOCASE
     """)
     suspend fun getCategoriesByName(name: String): List<String>
-
-    // ✅ Used for "asd / sdf" suggestion buttons for the same accNo
-   
-
-    // ✅ Category suggestion for a picked name (last used category for that name)
-    
 
     @Query("""
         SELECT 
@@ -711,9 +609,6 @@ interface ExpenseDao {
         ORDER BY txnCount DESC
     """)
     fun getUnknownAccGroupsFlow(): kotlinx.coroutines.flow.Flow<List<UnknownAccGroup>>
-
-    
-    // ✅ Add inside ExpenseDao interface
 
     @Query("""
         SELECT * FROM expenses
@@ -745,10 +640,6 @@ interface ExpenseDao {
     """)
     suspend fun getLastCategoryForName(name: String): String?
 
-    
-
-    
-
     @Query("""
         UPDATE expenses
         SET name = :newName,
@@ -758,16 +649,8 @@ interface ExpenseDao {
     """)
     suspend fun updateNameCategoryAndResolve(id: Long, newName: String, newCategory: String): Int
 
-    // Add inside ExpenseDao interface
     @Query("UPDATE expenses SET needsStatementImport = 0 WHERE id = :id")
     suspend fun clearNeedsStatementImport(id: Long)
-
-    // inside ExpenseDao.kt (top-level or near other result rows)
-    
-
-
-    
-
         data class PendingAccRow(
         val id: Long,
         val merchantAcc: String
@@ -944,7 +827,6 @@ interface ExpenseDao {
     """)
     fun getUnknownSmsFlow(): Flow<List<Expense>>
 
-   
     @Query("DELETE FROM expenses WHERE id = :id")
     suspend fun deleteById(id: Long)
 
@@ -1031,10 +913,6 @@ interface ExpenseDao {
         category: String,
         limit: Int = 10
     ): List<MerchantTotalRow>
-
-   
-
-   
 
     @Query("""
         SELECT (date / 86400000) * 86400000 AS dayStart,
@@ -1171,8 +1049,7 @@ interface ExpenseDao {
         AND LOWER(COALESCE(name, '')) NOT LIKE 'unknown%'
     """)
     suspend fun getTodayTxnCountExcludingUnknown(startOfDay: Long): Int
-
-    // ✅ Today totals for HOME cards = (Known + Unknown) today
+    
     @Query("""
         SELECT COALESCE(SUM(amount), 0)
         FROM expenses
@@ -1187,8 +1064,6 @@ interface ExpenseDao {
     """)
     suspend fun getTodayTxnCountAll(startOfDay: Long): Int
 
-
-    // ✅ Today Unknown only (must match Unknown tab logic)
     @Query("""
         SELECT 
             COALESCE(SUM(amount), 0) AS total,
@@ -1203,7 +1078,6 @@ interface ExpenseDao {
     """)
     suspend fun getTodayUnknownSummary(startOfDay: Long): TodayUnknownSummary
 
-    // ✅ Total saved amount (all time)
     @Query("""
         SELECT COALESCE(SUM(amount), 0.0)
         FROM expenses
@@ -1211,7 +1085,6 @@ interface ExpenseDao {
     """)
     suspend fun getTotalSavedAmountOrZero(): Double
 
-    // ✅ Saved amount between dates
     @Query("""
         SELECT COALESCE(SUM(amount), 0.0)
         FROM expenses
@@ -1220,7 +1093,6 @@ interface ExpenseDao {
     """)
     suspend fun getSavedAmountBetweenOrZero(fromMillis: Long, toMillis: Long): Double
 
-    // ✅ First saved dayStart (00:00) overall
     @Query("""
         SELECT MIN((date / 86400000) * 86400000)
         FROM expenses
@@ -1228,7 +1100,6 @@ interface ExpenseDao {
     """)
     suspend fun getFirstSavedDayStartOrNull(): Long?
 
-    // ✅ Distinct saved days count between dayStart..dayStart (inclusive)
     @Query("""
         SELECT COUNT(DISTINCT (date / 86400000))
         FROM expenses
@@ -1237,8 +1108,6 @@ interface ExpenseDao {
     """)
     suspend fun getDistinctSavedDaysCountBetween(fromDayStart: Long, toDayStart: Long): Int
 
-
-        // ✅ first saving sms date (exact millis)
     @Query("""
         SELECT MIN(date)
         FROM expenses
@@ -1246,7 +1115,6 @@ interface ExpenseDao {
     """)
     suspend fun getFirstSavingMillisOrNull(): Long?
 
-    // ✅ distinct saved days count between two millis, using timezone offset
     @Query("""
         SELECT COUNT(DISTINCT ((date + :tzOffset) / 86400000))
         FROM expenses
@@ -1267,9 +1135,6 @@ interface ExpenseDao {
     )
     suspend fun getTotalFrom(fromMillis: Long): Double
 
-
-   // File: app/src/main/java/com/example/expensereader/db/ExpenseDao.kt
-
     @Query("""
         SELECT 
             (e.date / 86400000) * 86400000 AS dayStartMillis,
@@ -1282,18 +1147,9 @@ interface ExpenseDao {
     """)
     suspend fun getBudgetDailyTotalsFrom(startMillis: Long): List<com.example.expensereader.db.BudgetDayTotal>
 
-        // ✅ Mark skip
     @androidx.room.Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
     suspend fun insertSkippedExpense(row: com.example.expensereader.model.SkippedExpense)
 
-    // ✅ Today total excluding skipped
-    
-    // ✅ Total from (week/month) excluding skipped
-    
-
-    // ✅ Latest expense today (to offer skip)
-
-    // ✅ today spend excluding skipped expenses
     @Query("""
         SELECT COALESCE(SUM(e.amount), 0.0)
         FROM expenses e
@@ -1304,7 +1160,6 @@ interface ExpenseDao {
     """)
     suspend fun getTodayTotalExcludingSkipped(startMillis: Long): Double
 
-    // ✅ latest expense today which is NOT already skipped (for Skip suggestion)
     @Query("""
         SELECT e.id AS id, e.amount AS amount
         FROM expenses e
@@ -1342,7 +1197,6 @@ interface ExpenseDao {
         LIMIT 1
     """)
     suspend fun getLatestExpenseTodayExcludingSkipped(startMillis: Long): LatestExpenseRow?
-
 
     @Query("""
         SELECT e.id AS id, e.amount AS amount
@@ -1394,10 +1248,6 @@ interface ExpenseDao {
         startOfDay: Long,
         minAmount: Double
     ): Unit
-
-
-    
-    
 
     @Query("""
         SELECT *
@@ -1484,8 +1334,6 @@ interface ExpenseDao {
 
     @Query("SELECT COALESCE(SUM(amount),0) FROM expenses WHERE date BETWEEN :start AND :end AND type='DEBIT'")
     suspend fun getTotalDebitBetween(start: Long, end: Long): Double
-
-
 
     @Query("""
         SELECT 

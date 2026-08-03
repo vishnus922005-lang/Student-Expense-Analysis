@@ -5,6 +5,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "category_budgets")
 data class CategoryBudget(
-    @PrimaryKey val category: String,   // "Food", "Travel", ...
-    val monthlyBudget: Double           // e.g., 5000.0
+    @PrimaryKey val category: String,   
+    val monthlyBudget: Double           
 )

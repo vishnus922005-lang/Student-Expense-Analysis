@@ -9,7 +9,6 @@ class FirestoreSchemesRepository {
 
     private val db = FirebaseRefs.db
 
-    // Reads user's state if saved at users/{uid}/profile/main
     suspend fun getUserStateOrNull(): String? {
         val uid = FirebaseRefs.uidOrThrow()
         val snap = db.collection("users").document(uid)
@@ -20,8 +19,6 @@ class FirestoreSchemesRepository {
 
     suspend fun fetchSchemesForUser(): List<FbSchemeUi> {
         val userState = getUserStateOrNull()
-
-        // Always include ALL
         val states = if (userState.isNullOrBlank()) listOf("ALL") else listOf("ALL", userState)
 
         var q: Query = db.collection("schemes")

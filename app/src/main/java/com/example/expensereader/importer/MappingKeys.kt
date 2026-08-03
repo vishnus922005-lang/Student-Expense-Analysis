@@ -1,4 +1,3 @@
-// File: app/src/main/java/com/example/expensereader/importer/MappingKeys.kt
 package com.example.expensereader.importer
 
 object MappingKeys {

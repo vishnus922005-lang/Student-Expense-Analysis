@@ -51,7 +51,7 @@ class StatementImportActivity : AppCompatActivity() {
     }
 
     private fun importPdf(pdfUri: Uri) {
-        // ✅ Keep permission so app can read later too
+
         try {
             contentResolver.takePersistableUriPermission(
                 pdfUri,
@@ -64,7 +64,6 @@ class StatementImportActivity : AppCompatActivity() {
                 val txns = BankPdfParser.parse(this@StatementImportActivity, pdfUri)
                 StatementFromPdfSaver.applyPdfToSms(this@StatementImportActivity, txns)
 
-                // ✅ NEW: After PDF merge, auto-resolve single-name Unknowns (moves them to Recent)
                 autoResolvePendingSinglesAndUpdateCategory()
 
                 Toast.makeText(
@@ -89,17 +88,7 @@ class StatementImportActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * ✅ No UI logic change, only DB fix after PDF import:
-     * - Find pending Unknown rows that have merchantAcc
-     * - If that merchantAcc has ONLY ONE unique known name => update name + category + clear needsStatementImport
-     *
-     * Needs DAO:
-     *  - getPendingUnknownWithAcc()
-     *  - getKnownNamesByMerchantAcc(acc)
-     *  - clearNeedsStatementImport(id)
-     *  - updateNameCategory(id, name, category)
-     */
+    
     private suspend fun autoResolvePendingSinglesAndUpdateCategory() {
         try {
             val dao = AppDatabase.getInstance(this).expenseDao()
@@ -116,13 +105,11 @@ class StatementImportActivity : AppCompatActivity() {
 
                 if (namesForAcc.isEmpty()) continue
 
-                // ✅ Merge like: "Tharun" and "Tharun P" -> "tharun" (you already use this logic in HomeFragment)
                 val finalNames = mergeSimilarNames(namesForAcc)
 
                 if (finalNames.size == 1) {
                     val finalName = finalNames.first()
 
-                    // ✅ category from ML (same as SmsReader)
                     val cat = try {
                         CategoryPredictor.predict(this, finalName)
                     } catch (_: Exception) {
@@ -138,12 +125,6 @@ class StatementImportActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Same merging idea you wanted:
-     * - removes titles
-     * - removes single-letter initials (P, K, S)
-     * - groups by normalized key
-     */
     private fun mergeSimilarNames(names: List<String>): List<String> {
         val titles = setOf("mr", "mrs", "ms", "miss", "dr", "sir", "sri", "shri", "kum", "selvi")
 
@@ -155,7 +136,7 @@ class StatementImportActivity : AppCompatActivity() {
                 .split(" ")
                 .filter { it.isNotBlank() }
                 .filter { it !in titles }
-                .filter { it.length > 1 } // ✅ remove initials like "p"
+                .filter { it.length > 1 } 
             return parts.joinToString("").replace(Regex("[^a-z0-9]"), "").trim()
         }
 

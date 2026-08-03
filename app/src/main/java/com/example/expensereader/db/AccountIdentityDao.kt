@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.expensereader.model.AccountIdentity   // ✅ IMPORTANT
+import com.example.expensereader.model.AccountIdentity   
 
 @Dao
 interface AccountIdentityDao {

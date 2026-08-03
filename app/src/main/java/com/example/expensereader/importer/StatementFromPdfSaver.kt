@@ -1,4 +1,3 @@
-// File: app/src/main/java/com/example/expensereader/importer/StatementFromPdfSaver.kt
 package com.example.expensereader.importer
 
 import android.content.Context
@@ -45,7 +44,6 @@ object StatementFromPdfSaver {
                 continue
             }
 
-            // ✅ Rule-based category only (NO ML)
             val category = com.example.expensereader.ml.CategoryResolver.resolve(context, name)
 
             Log.d(
@@ -53,7 +51,7 @@ object StatementFromPdfSaver {
                 "PDF[$total] name='$name' | ref='$ref' | cat='$category' | amount=${t.amount} | accRaw=${t.accNo}"
             )
 
-            // 0) Save mapping by REF ✅
+      
             mappingDao.insertOrUpdate(
                 PdfMapping(
                     key = MappingKeys.refKey(ref),
@@ -65,21 +63,19 @@ object StatementFromPdfSaver {
             mappingsSaved++
             Log.d(TAG, "MAP_SAVE_REF[$total] key=${MappingKeys.refKey(ref)} name='$name'")
 
-            // 1) Update SMS row(s) that match this REF (only if Unknown) ✅
             val updated = dao.updateByRefIfUnknown(ref, name, category)
 
             if (updated > 0) {
                 rowsUpdatedByRef += updated
-                Log.d(TAG, "✅ MATCH_REF[$total] ref=$ref -> rowsUpdated=$updated")
+                Log.d(TAG, "MATCH_REF[$total] ref=$ref -> rowsUpdated=$updated")
             } else {
-                Log.d(TAG, "❌ NO_MATCH_REF[$total] ref=$ref (not found OR not Unknown)")
+                Log.d(TAG, "NO_MATCH_REF[$total] ref=$ref (not found OR not Unknown)")
                 continue
             }
 
-            // 2) Spread using merchantAcc from the SMS row that matched this ref (safe) ✅
             val merchantAcc = dao.findMerchantAccByRef(ref)?.trim().orEmpty()
             if (merchantAcc.isBlank()) {
-                Log.d(TAG, "ℹ️ NO_MERCHANT_ACC[$total] ref=$ref -> cannot spread")
+                Log.d(TAG, "NO_MERCHANT_ACC[$total] ref=$ref -> cannot spread")
                 continue
             }
 
@@ -88,7 +84,7 @@ object StatementFromPdfSaver {
                 spreadSkippedNotUnique++
                 Log.w(
                     TAG,
-                    "⛔ SPREAD_BLOCKED[$total] merchantAcc=$merchantAcc distinctKnownNames=$distinctNames -> NOT SAFE, skip spread"
+                    "SPREAD_BLOCKED[$total] merchantAcc=$merchantAcc distinctKnownNames=$distinctNames -> NOT SAFE, skip spread"
                 )
                 continue
             }
@@ -97,18 +93,18 @@ object StatementFromPdfSaver {
 
             val spread = dao.updateByMerchantAccIfUnknown(merchantAcc, name, category)
             rowsSpreadByMerchantAcc += spread
-            Log.d(TAG, "✅ SPREAD_ACC[$total] acc=$merchantAcc -> rowsUpdated=$spread")
+            Log.d(TAG, "SPREAD_ACC[$total] acc=$merchantAcc -> rowsUpdated=$spread")
         }
 
         val filledPending = dao.fillUnknownNamesForPendingSms()
-        Log.d(TAG, "🟡 fillUnknownNamesForPendingSms() -> rows=$filledPending")
+        Log.d(TAG, "fillUnknownNamesForPendingSms() -> rows=$filledPending")
 
         try {
             backfilledByUpi = dao.backfillUnknownNamesFromPdfMappingByUpiRef()
             backfilledByAcc = dao.backfillUnknownNamesFromPdfMappingByAccNo()
-            Log.d(TAG, "✅ GLOBAL_BACKFILL -> byUpi=$backfilledByUpi | byAcc=$backfilledByAcc")
+            Log.d(TAG, "GLOBAL_BACKFILL -> byUpi=$backfilledByUpi | byAcc=$backfilledByAcc")
         } catch (e: Throwable) {
-            Log.e(TAG, "❌ Backfill DAO methods missing/failed: ${e.message}", e)
+            Log.e(TAG, "Backfill DAO methods missing/failed: ${e.message}", e)
         }
 
         Log.d(

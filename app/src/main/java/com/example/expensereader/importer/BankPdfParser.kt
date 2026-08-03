@@ -1,4 +1,3 @@
-// File: app/src/main/java/com/example/expensereader/importer/BankPdfParser.kt
 package com.example.expensereader.importer
 
 import android.content.Context
@@ -18,7 +17,6 @@ object BankPdfParser {
 
     private const val TAG = "PDF_PARSE"
 
-    // supports: "02 Nov, 2025" and "02Nov,2025"
     private val dateFormats = listOf(
         SimpleDateFormat("dd MMM, yyyy", Locale.ENGLISH),
         SimpleDateFormat("ddMMM,yyyy", Locale.ENGLISH)
@@ -27,29 +25,24 @@ object BankPdfParser {
     private fun digits(raw: String?): String? =
         raw?.replace(Regex("[^0-9]"), "")?.takeIf { it.isNotBlank() }
 
-    // ✅ normalize extracted PDF row text
     private fun normRow(raw: String): String {
         return raw
-            .replace("\u00A0", " ")                 // NBSP -> space
-            .replace(Regex("[\\t\\r\\n]+"), " ")    // tabs/newlines -> space
-            .replace(Regex("\\s+"), " ")            // multi spaces -> single
+            .replace("\u00A0", " ")                
+            .replace(Regex("[\\t\\r\\n]+"), " ")    
+            .replace(Regex("\\s+"), " ")            
             .trim()
     }
-
-    // ✅ Fix joined ALLCAPS corporate names (safe best-effort)
-    // Example: METROPOLITANTRANSPORTCORPORATIONCHENNAI -> METROPOLITAN TRANSPORT CORPORATION CHENNAI
+    
     private fun splitKnownAllCapsRuns(name: String): String {
         val n = name.trim()
         if (n.isBlank()) return n
-        if (n.contains(" ")) return n // already spaced
+        if (n.contains(" ")) return n 
 
-        // only attempt if it's long and mostly uppercase letters
         val letters = n.count { it.isLetter() }
         val upper = n.count { it.isUpperCase() }
         if (letters < 12) return n
-        if (upper < (letters * 0.85)) return n // not mostly ALLCAPS
+        if (upper < (letters * 0.85)) return n 
 
-        // known chunks we can safely split around
         val chunks = listOf(
             "TRANSPORT", "CORPORATION", "CORP", "LIMITED", "LTD",
             "CHENNAI", "TAMILNADU", "TAMIL", "NADU",
@@ -60,13 +53,12 @@ object BankPdfParser {
 
         var out = n
         for (c in chunks) {
-            // insert spaces around known word boundaries if joined
+    
             out = out.replace(c, " $c ")
         }
 
         out = out.replace(Regex("\\s+"), " ").trim()
-
-        // if splitting made it too weird (only 1 token), return original
+        
         return if (out.split(" ").size >= 2) out else n
     }
 
@@ -96,7 +88,6 @@ object BankPdfParser {
     }
 
     private fun parseName(text: String): String? {
-        // Handles: "Paid to NAME", "PaidtoNAME", "Paid to: NAME"
         val t = normRow(text)
 
         val paidIdx = t.indexOf("Paid", ignoreCase = true)
@@ -115,13 +106,10 @@ object BankPdfParser {
         val beforeAmt = afterPaidTo.substringBefore("₹").trim()
         if (beforeAmt.isBlank()) return null
 
-        // add spaces for camelCase if any: "AmazonPay" -> "Amazon Pay"
         val spacedCamel = beforeAmt.replace(Regex("([a-z])([A-Z])"), "$1 $2").trim()
 
-        // ✅ normalize spaces again
         val cleaned = normRow(spacedCamel)
 
-        // ✅ if PDF extractor joined ALLCAPS corp name, try safe split
         val fixed = splitKnownAllCapsRuns(cleaned)
 
         return fixed.ifBlank { null }
@@ -156,7 +144,6 @@ object BankPdfParser {
             for (page in 1..pdf.numberOfPages) {
                 val text = PdfTextExtractor.getTextFromPage(pdf.getPage(page))
 
-                // ✅ normalize each extracted line safely
                 rows += text.split("\n")
                     .map { normRow(it) }
                     .filter { it.isNotEmpty() }
@@ -207,11 +194,10 @@ object BankPdfParser {
 
                 result.add(txn)
 
-                // ✅ Save mapping by REF (later match to SMS)
                 mappingDao.insertOrUpdate(
                     PdfMapping(
                         key = buildRefKey(ref),
-                        name = name,          // ✅ now normalized + spaced
+                        name = name,          
                         accNo = myAccLast4,
                         upiRef = ref
                     )
@@ -226,7 +212,6 @@ object BankPdfParser {
                 i += 3
             }
 
-            // ✅ Run once AFTER all pdf_mapping is saved
             expenseDao.backfillUnknownNamesFromPdfMappingByUpiRef()
             expenseDao.backfillUnknownNamesFromPdfMappingByAccNo()
 

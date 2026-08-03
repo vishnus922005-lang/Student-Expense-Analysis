@@ -1,4 +1,3 @@
-// File: app/src/main/java/com/example/expensereader/db/AppDatabase.kt
 package com.example.expensereader.db
 
 import android.content.Context
@@ -34,8 +33,6 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
-
-        // ✅ Migration: add smsBody column to expenses table (keeps old data)
         private val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(
@@ -44,8 +41,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // ✅ Migration: create skipped_expenses table
-        // (Needed because you added SkippedExpense entity in version 3)
+      
         private val MIGRATION_2_3 = object : Migration(2, 3) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(
@@ -67,7 +63,6 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "eas_db"
                 )
-                    // ✅ Keep old data and migrate properly
                     .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
                     .build()
                     .also { INSTANCE = it }
